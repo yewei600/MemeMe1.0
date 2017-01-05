@@ -38,7 +38,7 @@
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="xFz-HV-bw4"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Album" id="Ptt-1e-oSS">
+                                    <barButtonItem title="Album" id="Ptt-1e-oSS" userLabel="Album Button">
                                         <connections>
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="AFv-w6-SyV"/>
                                         </connections>
@@ -57,6 +57,11 @@
                                     <barButtonItem title="Share" id="o8l-NU-e6Z">
                                         <connections>
                                             <action selector="shareMemeImage:" destination="BYZ-38-t0r" id="54b-oQ-dGA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Cancel" id="E2l-3r-prh" userLabel="Cancel Button">
+                                        <connections>
+                                            <action selector="cancelMemeImage:" destination="BYZ-38-t0r" id="2ur-vS-LWl"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -90,6 +95,7 @@
                         <outlet property="bottomTextField" destination="JPM-dF-Tcx" id="93k-dx-6Pj"/>
                         <outlet property="bottomToolBar" destination="dhW-Mo-QqE" id="oH8-C0-cQB"/>
                         <outlet property="cameraButton" destination="8l4-fx-6sg" id="28J-3z-Vdy"/>
+                        <outlet property="cancelButton" destination="E2l-3r-prh" id="O1U-Ep-XgY"/>
                         <outlet property="imageView" destination="gXq-Ke-A8U" id="zHx-EC-bVY"/>
                         <outlet property="shareButton" destination="o8l-NU-e6Z" id="VGi-3M-29T"/>
                         <outlet property="topTextField" destination="LXl-4b-lU3" id="IRl-fd-cSl"/>

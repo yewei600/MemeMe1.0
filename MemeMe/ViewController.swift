@@ -25,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var topToolBar: UIToolbar!
     
@@ -55,6 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = imageView.image != nil
+        cancelButton.isEnabled = imageView.image != nil
         self.subscribeToKeyboardNotifications()
     }
     
@@ -146,6 +148,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("Image SAVED!!!")
             }
         }
+    }
+    
+    
+    @IBAction func cancelMemeImage(_ sender: Any) {
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        imageView.image = nil
     }
     
     
