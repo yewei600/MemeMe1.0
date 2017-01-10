@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var origImage: UIImage
         var memeImage: UIImage
     }
-
+    
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.borderStyle = UITextBorderStyle.none
         textField.backgroundColor = UIColor.clear
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -116,7 +116,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         let meme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!, origImage: imageView.image!, memeImage: memedImage)
     }
-
+    
     func pick(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = sourceType
@@ -170,7 +170,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-  
-
+    
 }
 
