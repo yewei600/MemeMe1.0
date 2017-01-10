@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,61 +18,57 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-Ke-A8U">
-                                <rect key="frame" x="0.0" y="72" width="375" height="551"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-Ke-A8U">
+                                <rect key="frame" x="0.0" y="72" width="320" height="452"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXl-4b-lU3">
-                                <rect key="frame" x="0.0" y="113" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="113" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Rbr-o6-FZd"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="opS-jm-mcU"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="dhW-Mo-QqE">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ewj-4r-mvc"/>
                                     <constraint firstAttribute="height" constant="44" id="l2J-4o-Cme"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Camera" id="8l4-fx-6sg">
+                                    <barButtonItem systemItem="camera" id="8l4-fx-6sg">
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="xFz-HV-bw4"/>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Ana-gO-hu2"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="th4-8e-AQV"/>
                                     <barButtonItem title="Album" id="Ptt-1e-oSS" userLabel="Album Button">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="AFv-w6-SyV"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="CX9-uB-gPX"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPM-dF-Tcx">
-                                <rect key="frame" x="0.0" y="537" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="438" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="35J-XU-DW8"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="3ER-Ig-4ES"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a7-ns-uww">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="d3R-EK-Sgu"/>
                                     <constraint firstAttribute="height" constant="44" id="f6b-5F-T42"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Share" id="o8l-NU-e6Z">
+                                    <barButtonItem systemItem="action" id="o8l-NU-e6Z">
                                         <connections>
                                             <action selector="shareMemeImage:" destination="BYZ-38-t0r" id="54b-oQ-dGA"/>
                                         </connections>

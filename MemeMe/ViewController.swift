@@ -31,7 +31,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setTextFields(textField: topTextField)
+        setTextFields(textField: bottomTextField)
+    }
+    
+    func setTextFields(textField:UITextField) {
         let memeTextAttributes:[String:Any] = [
             NSStrokeColorAttributeName: UIColor.black,
             NSForegroundColorAttributeName: UIColor.white,
@@ -39,17 +44,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             NSStrokeWidthAttributeName: -3.0
         ]
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.delegate = self.textFieldsDelegate
-        bottomTextField.delegate = self.textFieldsDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = self.textFieldsDelegate
         
-        topTextField.textAlignment = .center
-        topTextField.borderStyle = UITextBorderStyle.none
-        topTextField.backgroundColor = UIColor.clear
-        bottomTextField.textAlignment = .center
-        bottomTextField.borderStyle = UITextBorderStyle.none
-        bottomTextField.backgroundColor = UIColor.clear        
+        textField.textAlignment = .center
+        textField.borderStyle = UITextBorderStyle.none
+        textField.backgroundColor = UIColor.clear
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
-            self.view.frame.origin.y = 0 - getKeyboardHeight(notification)
+            self.view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -117,19 +117,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let meme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!, origImage: imageView.image!, memeImage: memedImage)
     }
 
-    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
+    func pick(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = sourceType
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
     
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+        pick(sourceType: .camera)
+    }
+    
+    
+    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
+        pick(sourceType: .photoLibrary)
     }
     
     @IBAction func shareMemeImage(_ sender: Any) {
@@ -162,6 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
         }
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
